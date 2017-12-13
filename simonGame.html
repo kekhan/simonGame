@@ -2,20 +2,62 @@
 <html>
 <head>
 	<title>Simon Says</title>
+
 	<style type="text/css">
+	
+	#btn{
+		background-color: red;
+		width: 250px;
+		height: 250px;
+		position: relative;
+		
+		
+	}
+
+	.well{
+
+		width: 700px;
+		height: 700px;
+	}
+
 	body{
-		background-color: brown;
+		background-color: black;
 	}
-	canvas{
-		background-color: gray;
-		margin-left: 250px;
-		padding: 50px;
-		border-radius: 50%;
-	}
+
 	</style>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<canvas id = "canvas" width=500 height=500>
-	</canvas>
+	<div class ="container-fluid well">
+		<h1 class ="text-center">SIMON</h1>
+		<div class="row">
+			<div class ="col-md-6">
+				<button id ="btn" class='btn1' style="background-color:green"></button>
+			</div>
+			<div class="col-md-6"> 
+				<button id ="btn" class='btn2'></button>
+			</div>
+		</div>
+		<div class="row">
+			<div class ="col-md-6">
+				<button id ="btn" class='btn3'style="background-color:yellow"></button>
+			</div>
+			<div class ="col-md-6">
+				<button id ="btn" class='btn4' style="background-color:blue"></button>
+			</div>
+			
+
+		</div>
+		<button id="start" class="btn btn-danger">Start</button>
+		<button id="reset" class ="btn btn-info">Reset</button>
+	</div>
+
 </body>
 </html>
