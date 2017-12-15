@@ -39,25 +39,26 @@
 		<h1 class ="text-center">SIMON</h1>
 		<div class="row">
 			<div class ="col-md-6">
-				<button id ="btn" class='btn1' style="background-color:green"></button>
+				<button id ="btn" class='btn0' value='0' style="background-color:green" onclick="userMemory(this)"></button>
 			</div>
 			<div class="col-md-6"> 
-				<button id ="btn" class='btn2'></button>
+				<button id ="btn" class='btn1' value='1' onclick="userMemory(this)"></button>
 			</div>
 		</div>
 		<div class="row">
 			<div class ="col-md-6">
-				<button id ="btn" class='btn3'style="background-color:yellow"></button>
+				<button id ="btn" class='btn2' value='2' style="background-color:yellow" onclick="userMemory(this)"></button>
 			</div>
 			<div class ="col-md-6">
-				<button id ="btn" class='btn4' style="background-color:blue"></button>
+				<button id ="btn" class='btn3' value='3' style="background-color:blue" onclick="userMemory(this)"></button>
 			</div>
 			
 
 		</div>
-		<button id="start" class="btn btn-danger">Start</button>
-		<button id="reset" class ="btn btn-info">Reset</button>
+		<button id="start" class="btn btn-danger" onclick="start()" >Start</button>
+		<button id="reset" class ="btn btn-info" onclick="stop()">Stop</button>
 	</div>
+	<script type="text/javascript" src="simonGame.js"></script>
 
 </body>
 </html>
