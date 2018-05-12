@@ -1,0 +1,21 @@
+.greenSq{
+	background-color: green;
+	float: left;
+}
+.blueSq{
+	background-color: blue;
+	float: right;
+	padding-left: 50px;
+}
+.redSq{
+	background-color: red;
+	float: right;
+	
+}
+.yellowSq{
+	float: left;
+	background-color: yellow;
+}
+.innerCircle{
+	text-align: center
+}
