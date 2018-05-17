@@ -16,15 +16,17 @@ function checkGameState(){
 
 //start the game
 function startGame(){
+	console.log("hi");
 	start = true;
+	checkGameState();
 
 }
 
 function randomColorGenerator(){
 	// produces a number 0-3 for index of color array
 	var number = Math.floor(Math.random()*4);
-	queuedColors = queuedColors.push(number);
-	console.log(number,queuedColors);
+	queuedColors.push(number);
+	console.log(queuedColors);
 
 
 }
