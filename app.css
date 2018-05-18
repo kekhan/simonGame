@@ -1,21 +1,28 @@
-.greenSq{
+#green-btn{
 	background-color: green;
 	float: left;
 }
-.blueSq{
+#blue-btn{
 	background-color: blue;
-	float: right;
-	padding-left: 50px;
-}
-.redSq{
-	background-color: red;
-	float: right;
+	float: left;
 	
 }
-.yellowSq{
+#red-btn{
+	background-color: red;
+	float: left;
+	
+}
+#yellow-btn{
 	float: left;
 	background-color: yellow;
 }
 .innerCircle{
 	text-align: center
+}
+.btn{
+	width: 100px;
+	height: 100px;
+	margin: 50px 50px 50px 50px;
+	padding: 100px 100px 100px 100px;
+
 }

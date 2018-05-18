@@ -1,4 +1,4 @@
-<!docType>
+<!DOCTYPE html>
 <html>
 <head>
 	<title>Simon</title>
@@ -7,11 +7,21 @@
 <body onload="startGame()">
 	<div class="board">
 		
-		<div class="greenSq">Green</div>
-		<div class="innerCircle">Inner Circle</div>
-		<div class="redSq">red Square</div>
-		<div class="yellowSq">yelloSquare</div>
-		<div class="blueSq">blue Square</div>
+		<div class="greenSq">
+			<button id="green-btn" class="btn"></button>
+		</div>
+		<div class="innerCircle">
+			<button class="btn"> On</button>
+		</div>
+		<div class="redSq">
+			<button id="red-btn" class="btn"></button>
+		</div>
+		<div class="yellowSq">
+			<button id="yellow-btn" class="btn"></button>
+		</div>
+		<div class="blueSq">
+			<button id="blue-btn" class="btn"></button>
+		</div>
 	</div>
 	<script src="simonGame.js"></script>
 

@@ -27,6 +27,4 @@ function randomColorGenerator(){
 	var number = Math.floor(Math.random()*4);
 	queuedColors.push(number);
 	console.log(queuedColors);
-
-
 }
