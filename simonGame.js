@@ -1,30 +1,51 @@
 // Global variables 
 // blue, yellow,red,green
 const COLORARRAY = ['#110DFF','#FFF200','#FC0014','#104700'];
-var queuedColors = [];
+var queuedNumbers = [];
 var userTurn = false;
 var compTurn = false;
 var start = false;
+
 //check if game is on
-function checkGameState(){
-	if(start == true){
+function simonTurn(){
+	var color;
+	if(start){
 		// call the randomColor generater
-		randomColorGenerator();
+		getRandomColor();
+		for(var i=0; i<queuedNumbers.length;i++){
+			if(queuedNumbers[i] == 0){
+				console.log(i);
+				color = COLORARRAY[0];
+				// change the color of the box
+
+			}
+		}
 	}
 
 }
 
 //start the game
 function startGame(){
-	console.log("hi");
 	start = true;
-	checkGameState();
+	simonTurn();
 
 }
 
-function randomColorGenerator(){
+function getRandomColor(){
 	// produces a number 0-3 for index of color array
 	var number = Math.floor(Math.random()*4);
-	queuedColors.push(number);
-	console.log(queuedColors);
+	queuedNumbers.push(number);
+	
 }
+
+function checkMatch(){
+	// checks if clicks match simon's array
+	console.log("checking");
+}
+
+function user_input(btn){
+	//gets user input
+	console.log(btn);
+
+}
+
