@@ -2,6 +2,9 @@
 	background-color: green;
 	float: left;
 }
+.board{
+	background-color: black;
+}
 #blue-btn{
 	background-color: blue;
 	float: left;

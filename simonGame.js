@@ -14,9 +14,30 @@ function simonTurn(){
 		getRandomColor();
 		for(var i=0; i<queuedNumbers.length;i++){
 			if(queuedNumbers[i] == 0){
-				console.log(i);
-				color = COLORARRAY[0];
 				// change the color of the box
+				element = document.getElementById('green-btn"');
+				var color = '31E644';
+				changeColor(element,color);
+
+			}
+			else if(queuedNumbers[i] == 1){
+								// change the color of the box
+				element = document.getElementById('red-btn"');
+				var color = '#DF3140';
+				changeColor(element,color);
+
+			}
+			else if(queuedNumbers[i] == 2){
+				element = document.getElementById('yellow-btn"');
+				var color = '#EBD35D';
+				changeColor(element,color);
+
+			}
+			else if(queuedNumbers[i] == 3){
+				element = document.getElementById('blue-btn"');
+
+				var color = '#5496BF';
+				changeColor(element,color);
 
 			}
 		}
@@ -46,6 +67,17 @@ function checkMatch(){
 function user_input(btn){
 	//gets user input
 	console.log(btn);
+
+}
+
+function changeColor(element,color){
+	element.style.backgroundColor = color;
+
+
+	setInterval(function(){ 
+
+		console.log(element,color);
+	},500);
 
 }
 
