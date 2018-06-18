@@ -1,4 +1,4 @@
-// Global variables 
+// Global variables
 // blue, yellow,red,green
 const COLORARRAY = ['#110DFF','#FFF200','#FC0014','#104700'];
 var queuedNumbers = [];
@@ -56,7 +56,7 @@ function getRandomColor(){
 	// produces a number 0-3 for index of color array
 	var number = Math.floor(Math.random()*4);
 	queuedNumbers.push(number);
-	
+
 }
 
 function checkMatch(){
@@ -71,13 +71,15 @@ function user_input(btn){
 }
 
 function changeColor(element,color){
+	/*
+	this function will change the color of a square
+	*/
 	element.style.backgroundColor = color;
 
 
-	setInterval(function(){ 
+	setInterval(function(){
 
 		console.log(element,color);
 	},500);
 
 }
-
