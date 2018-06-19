@@ -1,6 +1,6 @@
 // Global variables
 // blue, yellow,red,green
-const COLORARRAY = ['#110DFF','#FFF200','#FC0014','#104700'];
+const COLORARRAY = ['#110DFF','#f2f093','#FC0014','#104700'];
 var queuedNumbers = [];
 var userTurn = false;
 var compTurn = false;
@@ -12,32 +12,74 @@ function simonTurn(){
 	if(start){
 		// call the randomColor generater
 		getRandomColor();
+
 		for(var i=0; i<queuedNumbers.length;i++){
 			if(queuedNumbers[i] == 0){
 				// change the color of the box
-				element = document.getElementById('green-btn"');
-				var color = '31E644';
-				changeColor(element,color);
+				var numToString = queuedNumbers[i].toString();
+				var idPlaceHolder = "btn"+numToString;
+				element = document.getElementsByClassName(idPlaceHolder)[0];
+				var color = '#31E644';
+				element.style.backgroundColor = color;
+
+
+				setInterval(function(){
+
+					element.style.backgroundColor = COLORARRAY[3];
+
+				},1000);
+
+
 
 			}
 			else if(queuedNumbers[i] == 1){
 								// change the color of the box
-				element = document.getElementById('red-btn"');
+				var numToString = queuedNumbers[i].toString();
+				var idPlaceHolder = "btn"+numToString;
+				element = document.getElementsByClassName(idPlaceHolder)[0];
 				var color = '#DF3140';
-				changeColor(element,color);
+				element.style.backgroundColor = color;
+
+
+				setInterval(function(){
+
+					element.style.backgroundColor = COLORARRAY[2];
+
+				},1000);
+
 
 			}
 			else if(queuedNumbers[i] == 2){
-				element = document.getElementById('yellow-btn"');
-				var color = '#EBD35D';
-				changeColor(element,color);
+				var numToString = queuedNumbers[i].toString();
+				var idPlaceHolder = "btn"+numToString;
+				element = document.getElementsByClassName(idPlaceHolder)[0];
+				var color = '#fffb21';
+				element.style.backgroundColor = 'color';
+
+
+				setInterval(function(){
+
+					element.style.backgroundColor = COLORARRAY[1];
+
+				},1000);
+
 
 			}
 			else if(queuedNumbers[i] == 3){
-				element = document.getElementById('blue-btn"');
+				var numToString = queuedNumbers[i].toString();
+				var idPlaceHolder = "btn"+numToString;
+				element = document.getElementsByClassName(idPlaceHolder)[0];
 
 				var color = '#5496BF';
-				changeColor(element,color);
+				element.style.backgroundColor = color;
+
+
+				setInterval(function(){
+
+					element.style.backgroundColor = COLORARRAY[0];
+
+				},1000);
+
 
 			}
 		}

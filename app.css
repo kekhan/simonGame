@@ -1,23 +1,23 @@
 #green-btn{
-	background-color: green;
+	background-color: #31E644;
 	float: left;
 }
 .board{
 	background-color: black;
 }
 #blue-btn{
-	background-color: blue;
+	background-color: #5496BF;
 	float: left;
-	
+
 }
 #red-btn{
-	background-color: red;
+	background-color: #DF3140;
 	float: left;
-	
+
 }
 #yellow-btn{
 	float: left;
-	background-color: yellow;
+	background-color: #fffb21;
 }
 .innerCircle{
 	text-align: center
