@@ -1,3 +1,9 @@
+/*This progam mimics the Simon Game. The computer will
+turn on when user clicks on button. The computer will generate tandom order of
+colors on the screen. The user will have to click on the colors in the correct
+order. If user clicks on wrong color the game will stop.
+The true and false will build the game loop.
+*/
 // Global variables
 // blue, yellow,red,green
 const COLORARRAY = ['#110DFF','#f2f093','#FC0014','#104700'];
@@ -9,9 +15,10 @@ var start = false;
 //check if game is on
 function simonTurn(){
 	var color;
-	if(start){
+	userTurn = false;
+	if(compTurn){
 		// call the randomColor generater
-		getRandomColor();
+		getRandomNumber();
 
 		for(var i=0; i<queuedNumbers.length;i++){
 			if(queuedNumbers[i] == 0){
@@ -85,16 +92,17 @@ function simonTurn(){
 		}
 	}
 
+
 }
 
 //start the game
 function startGame(){
-	start = true;
+	simonTurn = true;
 	simonTurn();
 
 }
 
-function getRandomColor(){
+function getRandomNumber(){
 	// produces a number 0-3 for index of color array
 	var number = Math.floor(Math.random()*4);
 	queuedNumbers.push(number);
