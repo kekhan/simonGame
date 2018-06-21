@@ -12,6 +12,7 @@ var userTurn = false;
 var compTurn = false;
 var start = false;
 
+
 //check if game is on
 function simonTurn(){
 	var color;
@@ -19,6 +20,7 @@ function simonTurn(){
 	if(compTurn){
 		// call the randomColor generater
 		getRandomNumber();
+		console.log(queuedNumbers);
 
 		for(var i=0; i<queuedNumbers.length;i++){
 			if(queuedNumbers[i] == 0){
@@ -90,15 +92,10 @@ function simonTurn(){
 
 			}
 		}
+		compTurn = false;
+		userTurn = true;
+		user_input();
 	}
-
-
-}
-
-//start the game
-function startGame(){
-	simonTurn = true;
-	simonTurn();
 
 }
 
@@ -115,9 +112,19 @@ function checkMatch(){
 }
 
 function user_input(btn){
-	//gets user input
-	console.log(btn);
-
+	/*
+	gets user input from html file. Checks if user input matches computers
+	input. Each user input is checked for match with queuedNumbers array.
+	Example:
+	user array [0,0,1] and comp array is [0,0,2]
+	Arrays have differnt number in index 2.
+	*/
+	if(userTurn){
+		compTurn=false;
+		console.log(btn);
+		compTurn=true;
+		simonTurn();
+	}
 }
 
 function changeColor(element,color){
@@ -132,4 +139,10 @@ function changeColor(element,color){
 		console.log(element,color);
 	},500);
 
+}
+
+//start the game
+function startGame(){
+	compTurn=true;
+	simonTurn();
 }
