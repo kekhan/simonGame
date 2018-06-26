@@ -11,6 +11,8 @@ var queuedNumbers = [];
 var userTurn = false;
 var compTurn = false;
 var start = false;
+var index = 0;
+let score=0;
 
 
 //check if game is on
@@ -77,9 +79,23 @@ function getRandomNumber(){
 	var number = Math.floor(Math.random()*4);
 	queuedNumbers.push(number);
 }
-function checkMatch(){
+function checkMatch(btn,index){
 	// checks if clicks match simon's array
+	console.log("queuedNumbers[index]", queuedNumbers[index]);
 	console.log("checking");
+	if(btn==queuedNumbers[index]){
+    score+=score;
+		console.log(score);
+		if(score>=20){
+			console.log("User Wins");
+			compTurn=false;
+			userTurn=false;
+		}
+		else{
+			compTurn=true;
+			userTurn=false;
+		}
+	}
 }
 
 function user_input(btn){
@@ -90,12 +106,15 @@ function user_input(btn){
 	user array [0,0,1] and comp array is [0,0,2]
 	Arrays have differnt number in index 2.
 	*/
+
+	compTurn=false;
 	if(userTurn){
-		compTurn=false;
-		console.log(btn);
-		compTurn=true;
-		simonTurn();
+		btn.value;
+		var input = Number(btn.value);
+		checkMatch(input,index);
+		index+=1;
 	}
+	simonTurn();
 }
 
 function changeColor(element,color){
