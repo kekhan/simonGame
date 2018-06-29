@@ -6,8 +6,9 @@ The true and false will build the game loop.
 */
 // Global variables
 // blue, yellow,red,green
-const COLORARRAY = ['#110DFF','#f2f093','#FC0014','#104700'];
+const COLORARRAY = ['#ADD8E6','#ffffff ','#f9bbc0','#a4ff89'];
 var queuedNumbers = [];
+var queuedUser = [];
 var userTurn = false;
 var compTurn = false;
 var start = false;
@@ -17,6 +18,7 @@ let score=0;
 
 //check if game is on
 function simonTurn(){
+	console.log("In Simon function");
 	var color;
 	userTurn = false;
 	if(compTurn){
@@ -28,43 +30,46 @@ function simonTurn(){
 				// change the color of the box
 				var numToString = queuedNumbers[i].toString();
 				var idPlaceHolder = "btn"+numToString;
-				element = document.getElementsByClassName(idPlaceHolder)[0];
-				var color = '#31E644';
-				element.style.backgroundColor = color;
-				setInterval(function(){
-					element.style.backgroundColor = COLORARRAY[3];
+				let element = document.getElementsByClassName(idPlaceHolder)[0];
+				var originalColor = element.style.backgroundColor;
+				element.style.backgroundColor = COLORARRAY[3];
+				myvar=setInterval(function(){
+					element.style.backgroundColor = originalColor;
+					clearTimeout(myvar);
 				},1000);
 			}
 			else if(queuedNumbers[i] == 1){
 								// change the color of the box
 				var numToString = queuedNumbers[i].toString();
 				var idPlaceHolder = "btn"+numToString;
-				element = document.getElementsByClassName(idPlaceHolder)[0];
-				var color = '#DF3140';
-				element.style.backgroundColor = color;
-				setInterval(function(){
-					element.style.backgroundColor = COLORARRAY[2];
+				let element = document.getElementsByClassName(idPlaceHolder)[0];
+				var originalColor = element.style.backgroundColor;
+				element.style.backgroundColor = COLORARRAY[2]
+				myvar = setTimeout(function(){
+					element.style.backgroundColor =originalColor;
+					clearTimeout(myvar);
 				},1000);
 			}
 			else if(queuedNumbers[i] == 2){
 				var numToString = queuedNumbers[i].toString();
 				var idPlaceHolder = "btn"+numToString;
-				element = document.getElementsByClassName(idPlaceHolder)[0];
-				var color = '#fffb21';
-				element.style.backgroundColor = 'color';
-				setInterval(function(){
-					element.style.backgroundColor = COLORARRAY[1];
+				let element = document.getElementsByClassName(idPlaceHolder)[0];
+				var originalColor = element.style.backgroundColor;
+				element.style.backgroundColor = COLORARRAY[1];
+				myvar = setTimeout(function(){
+					element.style.backgroundColor = originalColor;
+					clearTimeout(myvar);
 				},1000);
 			}
 			else if(queuedNumbers[i] == 3){
 				var numToString = queuedNumbers[i].toString();
 				var idPlaceHolder = "btn"+numToString;
-				element = document.getElementsByClassName(idPlaceHolder)[0];
-
-				var color = '#5496BF';
-				element.style.backgroundColor = color;
-				setInterval(function(){
-					element.style.backgroundColor = COLORARRAY[0];
+				let element = document.getElementsByClassName(idPlaceHolder)[0];
+				var originalColor = element.style.backgroundColor;
+				element.style.backgroundColor = COLORARRAY[0];
+				myvar = setTimeout(function(){
+					element.style.backgroundColor = originalColor;
+					clearTimeout(myvar);
 				},1000);
 			}
 		}
@@ -96,6 +101,14 @@ function checkMatch(btn,index){
 			userTurn=false;
 		}
 	}
+	else{
+		console.log("game over,No Match" + btn +" " + queuedNumbers[index]);
+		userTurn = false;
+		queuedNumbers = [];
+		compTurn=false;
+
+
+	}
 }
 
 function user_input(btn){
@@ -112,6 +125,7 @@ function user_input(btn){
 		btn.value;
 		var input = Number(btn.value);
 		checkMatch(input,index);
+		console.log("index in user_input", index);
 		index+=1;
 	}
 	simonTurn();
